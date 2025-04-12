@@ -2,6 +2,7 @@
 using HRAdministrationAPI;
 using System.Linq;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SchoolAdministration
 {
@@ -18,6 +19,30 @@ namespace SchoolAdministration
 
        static void Main(string[] args)
         {
+            int x = 110;
+            int[] numbers = [20,80,15,66,23,78,44,32];
+            for(int i=0; i<numbers.Length; i++)
+            {
+                if(numbers[i] < x && numbers[i] > 0)
+                {
+                    for(int j=i; j<numbers.Length; j++)
+                    {
+                        if(numbers[i] + numbers[j] == x)
+                            System.Console.WriteLine($"{numbers[i]} i {numbers[j]}");
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+            /*
             Log log = new Log();
             LogDel logTextToScreenDel, logTextToFileDel;
             logTextToScreenDel = new LogDel(log.LogTextToScreen);
@@ -33,7 +58,7 @@ namespace SchoolAdministration
             Console.WriteLine($"Total Annual Salaries (Including bonus): {employees.Sum(e => e.Salary)}");
 
             Console.ReadKey();
-
+*/
         }
 
         static void LogText(LogDel logDel, string text)
